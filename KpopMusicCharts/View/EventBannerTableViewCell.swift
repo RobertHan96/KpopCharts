@@ -27,9 +27,9 @@ class EventBannerTableViewCell: UITableViewCell {
         bannerCollectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 100, height: 120)
+        flowLayout.itemSize = CGSize(width: 400, height: 200)
         flowLayout.minimumLineSpacing = 5.0
-        flowLayout.minimumInteritemSpacing = 5.0
+        flowLayout.minimumInteritemSpacing = 10.0
         self.bannerCollectionView.collectionViewLayout = flowLayout
         self.bannerCollectionView.register(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BannerCollectionViewCell")
     }

@@ -39,6 +39,8 @@ class MainViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         mainTableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "songCell")
+        let headerNib = UINib.init(nibName: "MainHeader", bundle: Bundle.main)
+        mainTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "MainHeader")
     }
     
     // url스트링을 기반으로 이미지 Data를 생성하는 함수, 각 사이트에 맞게 뿌려줘야 하므로 별도로 함수로 구현
@@ -82,6 +84,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
+    // MARK: TableView General Setting
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return songs.count/3
     }
@@ -90,6 +93,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         return sections.count
     }
     
+    // MARK: TableView Cell Setting
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let tableViewCellHeight = tableView.frame.width / 5
         return tableViewCellHeight
@@ -129,14 +133,28 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         return songCell
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        sections[section]
+    // MARK: Header Setting
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MainHeader") as? MainHeader else { return  UITableViewHeaderFooterView() }
+        switch section {
+        case 0:
+            headerView.updatedTimeLabel.text = "멜론 TOP3"
+        case 1:
+            headerView.updatedTimeLabel.text = "벅스 TOP3"
+        case 2:
+            headerView.updatedTimeLabel.text = "지니 TOP3"
+        default:
+            headerView.updatedTimeLabel.text = "TOP3"
+        }
+        return headerView
     }
-
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor.white
-        let headerTitle = view as! UITableViewHeaderFooterView
-        headerTitle.textLabel?.font = UIFont.systemFont(ofSize: 15)
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = .systemBackground
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+          return 40
+    }
+    
 }

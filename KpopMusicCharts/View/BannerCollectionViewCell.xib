@@ -17,16 +17,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="389" height="187"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_banner2" translatesAutoresizingMaskIntoConstraints="NO" id="odb-fy-dLs">
-                        <rect key="frame" x="0.0" y="0.0" width="389" height="187"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_banner2" translatesAutoresizingMaskIntoConstraints="NO" id="odb-fy-dLs">
+                        <rect key="frame" x="0.0" y="20" width="389" height="147"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="odb-fy-dLs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Iwa-wu-IYz"/>
-                <constraint firstAttribute="bottom" secondItem="odb-fy-dLs" secondAttribute="bottom" id="VSj-xx-4qd"/>
-                <constraint firstItem="odb-fy-dLs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZE1-mR-8ec"/>
+                <constraint firstAttribute="bottom" secondItem="odb-fy-dLs" secondAttribute="bottom" constant="20" id="VSj-xx-4qd"/>
+                <constraint firstItem="odb-fy-dLs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="ZE1-mR-8ec"/>
                 <constraint firstAttribute="trailing" secondItem="odb-fy-dLs" secondAttribute="trailing" id="aK5-jT-A5j"/>
             </constraints>
             <size key="customSize" width="389" height="187"/>

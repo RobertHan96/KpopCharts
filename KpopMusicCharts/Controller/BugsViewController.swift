@@ -92,26 +92,11 @@ class BugsViewController: UIViewController {
 }
 
 extension BugsViewController : UITableViewDelegate, UITableViewDataSource {
+    // MARK: TableView General Setting
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MainHeader") as? MainHeader else { return  UITableViewHeaderFooterView() }
-            headerView.updatedTimeLabel.text = "TODAY'S ARTIST"
-            return headerView
-        } else {
-            guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MainHeader") as? MainHeader else { return  UITableViewHeaderFooterView() }
-            headerView.updatedTimeLabel.text = String().getCurrentTime()
-            return headerView
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-          return 20
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -119,12 +104,37 @@ extension BugsViewController : UITableViewDelegate, UITableViewDataSource {
             return self.isFiltering ? self.filteredSongs.count : self.songs.count
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let tableViewCellHeight = tableView.frame.width / 5
-        return tableViewCellHeight
+
+    // MARK: TableView Header Setting
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MainHeader") as? MainHeader else { return  UITableViewHeaderFooterView() }
+        if section == 0 {
+            headerView.updatedTimeLabel.text = "TODAY'S ARTIST"
+            return headerView
+        } else {
+            headerView.updatedTimeLabel.text = "Charts"
+            return headerView
+        }
     }
 
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = .systemBackground
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+          return 40
+    }
+    
+    // MARK: TableView Cell Setting
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 && indexPath.section == 0 {
+            let tableViewCellHeight = tableView.frame.width / 2
+            return tableViewCellHeight
+        } else {
+            let tableViewCellHeight = tableView.frame.width / 4
+            return tableViewCellHeight
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -143,7 +153,7 @@ extension BugsViewController : UITableViewDelegate, UITableViewDataSource {
                 cell.titleLabel.text = filteredSongs[indexPath.row].title
                 cell.artistLabel.text = filteredSongs[indexPath.row].artist
                 cell.rankLabel.text = "\(filteredSongs[indexPath.row].rank)"
-                let alubartImageUrlData = getDataFromStringUrl(urlString: filteredSongs[indexPath.row].url)
+                let alubartImageUrlData = String().getDataFromStringUrl(urlString: filteredSongs[indexPath.row].url)
                 cell.albumartImageView.image = UIImage(data: alubartImageUrlData)
             } else {
                 if isDesc {
@@ -154,22 +164,20 @@ extension BugsViewController : UITableViewDelegate, UITableViewDataSource {
                 cell.titleLabel.text = songs[indexPath.row].title
                 cell.artistLabel.text = songs[indexPath.row].artist
                 cell.rankLabel.text = "\(songs[indexPath.row].rank)"
-                let alubartImageUrlData = getDataFromStringUrl(urlString: songs[indexPath.row].url)
+                let alubartImageUrlData = String().getDataFromStringUrl(urlString: songs[indexPath.row].url)
                 cell.albumartImageView.image = UIImage(data: alubartImageUrlData)
             }
             return cell
        }
     }
-    
-    func getDataFromStringUrl(urlString :String) -> Data {
-        let url = URL(string: urlString )
-        var albumart = Data()
-        do {
-            albumart = try Data(contentsOf: url!)
-            } catch {
-                popupError(currentView: self)
-            }
-        return albumart
+}
+
+// MARK: SearchController Setting
+extension BugsViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        self.filteredSongs = self.songs.filter { $0.title.lowercased().hasPrefix(text) }
+        self.bugsTableView.reloadData()
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -181,15 +189,6 @@ extension BugsViewController : UITableViewDelegate, UITableViewDataSource {
         songs = songs.filter({( song : Song) -> Bool in
         return song.title.lowercased().contains(searchText.lowercased())
       })
-    }
-
-}
-
-extension BugsViewController : UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        self.filteredSongs = self.songs.filter { $0.title.lowercased().hasPrefix(text) }
-        self.bugsTableView.reloadData()
     }
 }
 
