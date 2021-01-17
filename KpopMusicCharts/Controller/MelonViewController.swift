@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import Kingfisher
 
 class MelonViewController: UIViewController {
     @IBOutlet weak var melonTableView: UITableView!
@@ -79,7 +80,6 @@ class MelonViewController: UIViewController {
                         guard let from = document.data()["from"] as? String else {return}
                         let song : Song = Song(title : title, artist : artist, url : url,
                             rank: rank, from : from)
-                        
                         self.songs.append(song)
                         count += 1
                         if count == 100 {
@@ -166,8 +166,8 @@ extension MelonViewController : UITableViewDelegate, UITableViewDataSource {
                 cell.titleLabel.text = songs[indexPath.row].title
                 cell.artistLabel.text = songs[indexPath.row].artist
                 cell.rankLabel.text = "\(songs[indexPath.row].rank)"
-                let alubartImageUrlData = String().getDataFromStringUrl(urlString: songs[indexPath.row].url)
-                cell.albumartImageView.image = UIImage(data: alubartImageUrlData)
+                let url = URL(string: songs[indexPath.row].url)
+                cell.albumartImageView.kf.setImage(with: url)
             }
             return cell
        }

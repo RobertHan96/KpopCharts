@@ -115,17 +115,20 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             songCell.titleLabel.text = melonTop3[indexPath.row].title
             songCell.artistLabel.text = melonTop3[indexPath.row].artist
-            songCell.albumartImageView.image = UIImage(data: makeImageUrl(url: melonTop3[indexPath.row].url))
+            let url = URL(string: melonTop3[indexPath.row].url)
+            songCell.albumartImageView.kf.setImage(with: url)
             songCell.rankLabel.text = "\(melonTop3[indexPath.row].rank)"
         } else if indexPath.section == 1 {
             songCell.titleLabel.text = bugsTop3[indexPath.row].title
             songCell.artistLabel.text = bugsTop3[indexPath.row].artist
-            songCell.albumartImageView.image = UIImage(data: makeImageUrl(url: bugsTop3[indexPath.row].url))
+            let url = URL(string: bugsTop3[indexPath.row].url)
+            songCell.albumartImageView.kf.setImage(with: url)
             songCell.rankLabel.text = "\(bugsTop3[indexPath.row].rank)"
         } else if indexPath.section == 2 {
             songCell.titleLabel.text = genieTop3[indexPath.row].title
             songCell.artistLabel.text = genieTop3[indexPath.row].artist
-            songCell.albumartImageView.image = UIImage(data: makeImageUrl(url: genieTop3[indexPath.row].url))
+            let url = URL(string: genieTop3[indexPath.row].url)
+            songCell.albumartImageView.kf.setImage(with: url)
             songCell.rankLabel.text = "\(genieTop3[indexPath.row].rank)"
         } else {
             print("Log - 메인 랭킹정보 로딩 중 에러 발생")

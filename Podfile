@@ -9,5 +9,5 @@ target 'KpopMusicCharts' do
 pod 'Firebase/Firestore'
 pod 'Toast-Swift', '~> 5.0.1'
 pod 'Firebase/Analytics'
-
+pod 'Kingfisher'
 end

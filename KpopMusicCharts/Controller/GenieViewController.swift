@@ -166,8 +166,8 @@ extension GenieViewController : UITableViewDelegate, UITableViewDataSource {
                 cell.titleLabel.text = songs[indexPath.row].title
                 cell.artistLabel.text = songs[indexPath.row].artist
                 cell.rankLabel.text = "\(songs[indexPath.row].rank)"
-                let alubartImageUrlData = String().getDataFromStringUrl(urlString: songs[indexPath.row].url)
-                cell.albumartImageView.image = UIImage(data: alubartImageUrlData)
+                let url = URL(string: songs[indexPath.row].url)
+                cell.albumartImageView.kf.setImage(with: url)
             }
             return cell
        }
