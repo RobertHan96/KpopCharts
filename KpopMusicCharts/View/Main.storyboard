@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z0t-o0-q3n">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Melon View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MelonViewController" customModule="KpopMusicCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qp6-Ur-n8e">
+                                <rect key="frame" x="20" y="98" width="374" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qp6-Ur-n8e" secondAttribute="trailing" constant="20" id="3Lh-KY-Z0h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qp6-Ur-n8e" secondAttribute="bottom" id="MHT-BO-HZX"/>
+                            <constraint firstItem="Qp6-Ur-n8e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="sxn-Eo-bda"/>
+                            <constraint firstItem="Qp6-Ur-n8e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xVb-MQ-28v"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7o3-My-7iK">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.and.down" catalog="system" id="mI8-Ae-KHV"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="melonTableView" destination="Qp6-Ur-n8e" id="W78-sc-yn5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4682.608695652174" y="701.78571428571422"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="ppY-tl-fzQ">
+            <objects>
+                <viewController id="LMK-PZ-TQL" customClass="MainViewController" customModule="KpopMusicCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nyv-as-djS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-5R-Cu6">
+                                <rect key="frame" x="20" y="98" width="374" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B7o-Rc-eYa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ldd-5R-Cu6" firstAttribute="leading" secondItem="B7o-Rc-eYa" secondAttribute="leading" constant="20" id="DaC-gB-yYT"/>
+                            <constraint firstItem="B7o-Rc-eYa" firstAttribute="bottom" secondItem="Ldd-5R-Cu6" secondAttribute="bottom" id="LhY-7A-ASy"/>
+                            <constraint firstItem="B7o-Rc-eYa" firstAttribute="trailing" secondItem="Ldd-5R-Cu6" secondAttribute="trailing" constant="20" id="MBo-qn-rd4"/>
+                            <constraint firstItem="Ldd-5R-Cu6" firstAttribute="top" secondItem="B7o-Rc-eYa" secondAttribute="top" constant="10" id="kiC-EL-Chi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Main" id="GA9-zS-XuN"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="Ldd-5R-Cu6" id="LBp-hY-dph"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuO-AH-jII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2865.217391304348" y="-15.401785714285714"/>
+        </scene>
+        <!--Bugs View Controller-->
+        <scene sceneID="9gk-4t-db7">
+            <objects>
+                <viewController id="EL4-cH-ASm" customClass="BugsViewController" customModule="KpopMusicCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oco-i8-bVs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wab-7U-gfA">
+                                <rect key="frame" x="20" y="98" width="374" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uNe-y6-cq1"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wab-7U-gfA" firstAttribute="top" secondItem="uNe-y6-cq1" secondAttribute="top" constant="10" id="KO7-I9-B8M"/>
+                            <constraint firstItem="Wab-7U-gfA" firstAttribute="leading" secondItem="uNe-y6-cq1" secondAttribute="leading" constant="20" id="QwL-4H-p11"/>
+                            <constraint firstItem="uNe-y6-cq1" firstAttribute="bottom" secondItem="Wab-7U-gfA" secondAttribute="bottom" id="hwl-Zf-jyg"/>
+                            <constraint firstItem="uNe-y6-cq1" firstAttribute="trailing" secondItem="Wab-7U-gfA" secondAttribute="trailing" constant="20" id="z5E-DK-cRW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yqM-Co-IeI">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.and.down" catalog="system" id="7ST-e5-lPo">
+                            <connections>
+                                <action selector="sortSongByRank:" destination="EL4-cH-ASm" id="MUj-zK-joK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bugsTableView" destination="Wab-7U-gfA" id="glD-QE-gaE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="faG-0J-rXz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2865" y="702"/>
+        </scene>
+        <!--Genie View Controller-->
+        <scene sceneID="qcJ-rl-dnW">
+            <objects>
+                <viewController id="eZU-CW-Nyj" customClass="GenieViewController" customModule="KpopMusicCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p9Q-q2-omt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KTJ-vp-8eA">
+                                <rect key="frame" x="20" y="98" width="374" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jmc-38-sFA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KTJ-vp-8eA" firstAttribute="leading" secondItem="Jmc-38-sFA" secondAttribute="leading" constant="20" id="4w1-f5-JGl"/>
+                            <constraint firstItem="Jmc-38-sFA" firstAttribute="bottom" secondItem="KTJ-vp-8eA" secondAttribute="bottom" id="9X8-A8-sAj"/>
+                            <constraint firstItem="Jmc-38-sFA" firstAttribute="trailing" secondItem="KTJ-vp-8eA" secondAttribute="trailing" constant="20" id="aJg-i8-NOe"/>
+                            <constraint firstItem="KTJ-vp-8eA" firstAttribute="top" secondItem="Jmc-38-sFA" secondAttribute="top" constant="10" id="rTU-ZI-eYY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GoG-Sr-m80">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.and.down" catalog="system" id="qAi-6b-ofN"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="genieTablewView" destination="KTJ-vp-8eA" id="osC-LX-nmb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R6A-mg-dGS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842" y="1507"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="xWf-O3-Z0L">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YJg-IN-nyh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Main" id="HOG-zd-yOR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mpz-h3-PL2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LMK-PZ-TQL" kind="relationship" relationship="rootViewController" id="gmW-q3-cj9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2r6-Ck-j59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.072463768116" y="-15.401785714285714"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UrO-Np-9SD">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="z0t-o0-q3n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="blU-Ds-OaI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YJg-IN-nyh" kind="relationship" relationship="viewControllers" id="1Q1-2g-h6K"/>
+                        <segue destination="Sr2-MG-g4Q" kind="relationship" relationship="viewControllers" id="UGp-ft-qts"/>
+                        <segue destination="sdc-4z-wc6" kind="relationship" relationship="viewControllers" id="rvC-PX-uL3"/>
+                        <segue destination="5uz-4b-VG4" kind="relationship" relationship="viewControllers" id="7fk-aH-1BW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1M-vM-Pdp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="-15.401785714285714"/>
+        </scene>
+        <!--벅스-->
+        <scene sceneID="PNh-ca-0dg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sr2-MG-g4Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="벅스" id="YHI-lS-MUV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7b8-Fj-ZQO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EL4-cH-ASm" kind="relationship" relationship="rootViewController" id="yOP-3M-ckm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSL-lw-puJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955" y="702"/>
+        </scene>
+        <!--지니-->
+        <scene sceneID="FT5-39-2SY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sdc-4z-wc6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="지니" id="X9l-jF-6hI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nym-n4-oDf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eZU-CW-Nyj" kind="relationship" relationship="rootViewController" id="xkk-RP-WQg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOf-1k-fNb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955" y="1507"/>
+        </scene>
+        <!--멜론-->
+        <scene sceneID="H0O-nR-cQJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5uz-4b-VG4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="멜론" id="99c-l9-TxT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GeP-yW-XTT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="V25-T0-Bj9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWa-MG-xzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3772.4637681159425" y="701.78571428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.up.and.down" catalog="system" width="100" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

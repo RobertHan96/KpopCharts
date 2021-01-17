@@ -1,0 +1,6 @@
+framework module Pods_KpopMusicCharts {
+  umbrella header "Pods-KpopMusicCharts-umbrella.h"
+
+  export *
+  module * { export * }
+}

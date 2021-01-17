@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="94" id="KGk-i7-Jjw" customClass="SongTableViewCell" customModule="KpopMusicCharts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5kJ-rr-vIc">
+                        <rect key="frame" x="0.0" y="22" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="8N1-48-FWu"/>
+                            <constraint firstAttribute="height" constant="50" id="GhC-Zv-ZK3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LR-gg-rGs">
+                        <rect key="frame" x="70" y="37" width="7.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LAt-p9-RSO">
+                        <rect key="frame" x="97.5" y="24.5" width="292.5" height="45"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="흔들리는 꽃들 속에서 너의 샴푸향이 느껴진거야." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJn-Wu-Vtg">
+                                <rect key="frame" x="0.0" y="0.0" width="292.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장범준" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXp-sQ-6Sj">
+                                <rect key="frame" x="0.0" y="24.5" width="292.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LAt-p9-RSO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4nW-MZ-viv"/>
+                    <constraint firstItem="5kJ-rr-vIc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Vv0-JP-d6H"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LAt-p9-RSO" secondAttribute="trailing" constant="10" id="dLI-xU-DTn"/>
+                    <constraint firstItem="LAt-p9-RSO" firstAttribute="leading" secondItem="6LR-gg-rGs" secondAttribute="trailing" constant="20" id="emZ-dR-kd9"/>
+                    <constraint firstItem="5kJ-rr-vIc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ok2-S0-oPr"/>
+                    <constraint firstItem="6LR-gg-rGs" firstAttribute="leading" secondItem="5kJ-rr-vIc" secondAttribute="trailing" constant="20" id="okI-u0-FHn"/>
+                    <constraint firstItem="6LR-gg-rGs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="snC-Av-qtF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="albumartImageView" destination="5kJ-rr-vIc" id="6oy-u5-TCe"/>
+                <outlet property="artistLabel" destination="aXp-sQ-6Sj" id="1XU-Iq-262"/>
+                <outlet property="rankLabel" destination="6LR-gg-rGs" id="MWG-LU-ue7"/>
+                <outlet property="titleLabel" destination="ZJn-Wu-Vtg" id="Quq-yL-Pkv"/>
+            </connections>
+            <point key="canvasLocation" x="82.608695652173921" y="72.321428571428569"/>
+        </tableViewCell>
+    </objects>
+</document>
